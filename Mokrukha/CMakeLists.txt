@@ -8,11 +8,8 @@ add_subdirectory(vendor/tracy)
 
 add_library(Mokrukha STATIC)
 
-file(GLOB_RECURSE SOURCES "src/*.cpp")
-target_sources(Mokrukha
-PRIVATE
-    ${SOURCES}
-)
+file(GLOB_RECURSE SOURCES "src/*.c" "src/*.h")
+target_sources(Mokrukha PRIVATE ${SOURCES})
 
 target_include_directories(Mokrukha
     PUBLIC
